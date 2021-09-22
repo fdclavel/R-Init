@@ -4,26 +4,47 @@
 #Will install and mount the following packages:
 #***********************************************
 
+# potential linux errors:
+# 
+# Using PKG_CFLAGS=
+#   Using PKG_LIBS=-lxml2
+#   ------------------------- ANTICONF ERROR ---------------------------
+#     Configuration failed because libxml-2.0 was not found. Try installing:
+#     * deb: libxml2-dev (Debian, Ubuntu, etc)
+#   * rpm: libxml2-devel (Fedora, CentOS, RHEL)
+#   * csw: libxml2_dev (Solaris)
+#   If libxml-2.0 is already installed, check that 'pkg-config' is in your
+#   PATH and PKG_CONFIG_PATH contains a libxml-2.0.pc file. If pkg-config
+#   is unavailable you can set INCLUDE_DIR and LIB_DIR manually via:
+#     R CMD INSTALL --configure-vars='INCLUDE_DIR=... LIB_DIR=...'
+#   --------------------------------------------------------------------
+# to add to Ubuntu/Debian you may need:
+# sudo apt-get install -y libxml2-dev
+# sudo apt-get install -y libcurl4-openssl-dev
+# sudo apt-get install -y libssl-dev
+
+
+# ---------------------
+# DEVELOPMENT AND WEB PACKAGES
+install.packages("devtools")
+
 #---------------
-#IMPORT PACKAGES
+#FILE IMPORTING PACKAGES
 #---------------
 
-    #foreign (install S, SAS, SPSS, Stata)
-    #Hmisc (import other formats including transport files, and converting value labels into factors)
-    #tidyverse (includes ggplot, psych, and import/export capability for csv, SAS, and SPSS files)
-    #haven (read spss files as data frames [imported as tibbles])
-    install.packages("foreign")
-    install.packages("Hmisc")
-    install.packages("tidyverse")
-    install.packages("haven")
-    library("foreign")
-    library("Hmisc")
-    library("tidyverse")
+#foreign (install S, SAS, SPSS, Stata)
+#Hmisc (import other formats including transport files, and converting value labels into factors)
+#tidyverse (includes ggplot, psych, and import/export capability for csv, SAS, and SPSS files)
+#haven (read spss files as data frames [imported as tibbles])
+install.packages("foreign")
+install.packages("Hmisc")
+install.packages("tidyverse")
+install.packages("haven")
 
 #---------------
-#ANALYTIC PROCEDURE PACKAGES
+#ANALYTICS PACKAGES
 #---------------
-    
+
 #nlme (linear and nonlinear mixed effects modeling)
 #lme4 (linear mixed effects models)
 #psych (includes many common procedures in psychological statistics)
@@ -31,6 +52,8 @@
 #lavaan (SEM and growth curves. can also process Mplus input programs with mplus2lavaan)
 #MASS (multivariate simulations)
 #mice and miceadds (conduct multiple imputation across various test types)
+#rpart - machine learning
+#xgb - gradient boosted models
 install.packages("nlme")
 install.packages("lme4")
 install.packages("psych")
@@ -38,11 +61,10 @@ install.packages("sem")
 install.packages("lavaan")
 install.packages("MASS")
 install.packages("mice")
-install.pacakges("miceadds")
-library("nlme")
-library("lme4")
-library("psych")
-library("sem")
+install.packages("miceadds")
+install.packages("rpart")
+install.packages("xgboost")
+install.packages("curl")
 
 #------------
 #DATA MANAGEMENT/MANIPULATION PACKAGES
@@ -54,9 +76,7 @@ library("sem")
 install.packages("reshape")
 install.packages("simstudy")
 install.packages("DT")
-library("reshape")
-library("simstudy")
-library(DT)
+
 
 #FORMATTING PACKAGES
 #stargazer (for ascii enabled  and LaTeX/HTML regression and summary stats tables
@@ -77,12 +97,7 @@ install.packages("prettyR")
 install.packages("LaTex")
 install.packages("kableExtra")
 install.packages("extrafont")
-library("stargazer")
-library("ascii")
-library("ggplot2")
-library("apaTables")
-library(kableExtra)
-library(extrafont)
+
 # extra steps for extrafont.
 
 # run the loadfonts() function to import all your 
@@ -90,6 +105,6 @@ library(extrafont)
 # have on your machine, this can take several minutes
 # to process. My first time, I had about 400 fonts, and
 # the procedure took roughly 3 minutes to finish.
-loadfonts(device="pdf")
-fonts()
-windowsF
+#loadfonts(device="pdf")
+#fonts()
+#windowsF
