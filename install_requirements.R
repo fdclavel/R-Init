@@ -1,3 +1,4 @@
+setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 reqs <- scan("Rpackages.txt", character(), quote="")
 pkgs <- as.character(installed.packages()[,c(1)])
 install_pkgs <- pkgs[!(pkgs %in% reqs)]
