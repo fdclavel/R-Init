@@ -5,6 +5,8 @@
 
 This repository is designed for housing initialization scripts in R. They are designed to replicate the Python functionality of generating a requirements.txt file and updating libraries based on the list of requirements. Because R lacks a native process for this operation, I made one up. It is carried out across two short scripts. 
 
+#### Note that as of the most recent update, this process depends on native R Studio processes, so running it in R console or via command line will not work.**
+
 
 **Files include:**
 
