@@ -5,7 +5,7 @@
 
 This repository is designed for housing initialization scripts in R. They are designed to replicate the Python functionality of generating a requirements.txt file and updating libraries based on the list of requirements. Because R lacks a native process for this operation, I made one up. It is carried out across two short scripts. 
 
-#### Note that as of the most recent update, this process depends on native R Studio processes, so running it in R console or via command line will not work.**
+### Note that as of the most recent update, this process depends on native R Studio processes, so running it in R console or via command line will not work.
 
 
 **Files include:**
@@ -14,7 +14,7 @@ This repository is designed for housing initialization scripts in R. They are de
 - `install_requirements.R`
 - `Rpackages.txt` (a file for the lazy)
 
-The most common use case I envision for these scripts is a system change. If you are migrating from an old system to a new one, you will likely need a fresh install of R and RStudio (or whatever IDE you use). It can be kind of a pain to manually re-initialize your library after a new install by writing a bunch of install.packages("somestupidpackage") lines to get all your old packages back before getting started with any new programming. 
+The most common use case I envision for these scripts is a system change. If you are migrating from an old system to a new one, you will likely need a fresh install of R and RStudio (or whatever IDE you use - but you should use RStudio `[see note above]`). It can be kind of a pain to manually re-initialize your library after a new install by writing a bunch of install.packages("somestupidpackage") lines to get all your old packages back before getting started with any new programming. 
 
 Instead of dealing with this tedium, you can run the scripts in this repo to automatically update your new system library with the exact same packages as your old library, with very little end-user input.
 
