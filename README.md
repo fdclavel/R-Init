@@ -31,7 +31,7 @@ After the run is complete, migrate the `Rpackages.txt` file to your new system h
 
 **NOTE: This script  must be saved to the same directory location as your `Rpackages.txt` file.**
 
-The `install_packages.R` script will check your current system's R library against the Rpackages.txt file, and will attempt to install all of the packages listed in the text file that are currently missing from your system. Depending on the number of packages your new system is missing relative to your old system, this operation can take a few seconds or several minutes. If you already have all of the same packages from your old system library installed in your new system library, the script will report that the process was aborted without incident.
+The `install_packages.R` script will check your current system's R library against the Rpackages.txt file, and will attempt to install all of the packages listed in the text file that are currently missing from your system. Depending on the number of packages your new system is missing relative to your old system, this operation can take a few seconds or several minutes. The script will prompt you with information about the number of new packages to install and ask if you wish to proceed - **you must enter "y" or "n" into the console to proceed once you are prompted**. If you already have all of the same packages from your old system library installed in your new system library, the script will report that the process was aborted without incident.
 
 3. The `Rpackages.txt` file in this repo - for the lazy. 
 
