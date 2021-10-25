@@ -1,7 +1,7 @@
 setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 reqs <- scan("Rpackages.txt", character(), quote="")
 pkgs <- as.character(installed.packages()[,c(1)])
-install_pkgs <- pkgs[!(pkgs %in% reqs)]
+install_pkgs <- reqs[!(reqs %in% pkgs)]
 
 if(length(install_pkgs) > 0) {
   message("ALERT: ", length(install_pkgs), " new packages ready to install.")
